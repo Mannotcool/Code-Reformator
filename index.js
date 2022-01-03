@@ -9,6 +9,7 @@ client.on('ready', async () => {
 });
 client.on("messageCreate", async (message) => {
     if(message.author.id === client.user.id) return;
+    if(message.mentions.everyone || message.mentions.here) return;
         if (detectLang(message.content) === 'JavaScript' || detectLang(message.content) === 'C' || detectLang(message.content) === 'C++' || detectLang(message.content) === 'Python' || detectLang(message.content) === 'Java' || detectLang(message.content) === 'HTML' || detectLang(message.content) === 'CSS' || detectLang(message.content) === 'Ruby' || detectLang(message.content) === 'Go' || detectLang(message.content) === 'PHP') {
             // Upload code to hastebin.com
             
